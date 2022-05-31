@@ -1,0 +1,151 @@
+.header {
+    @include fade-in-down;
+    display: flex;
+    justify-content: space-between;
+    &__logo {
+        box-sizing: border-box;
+        background-color: $red;
+        width: 127px;
+        height: 170px;
+        padding: 20px 12px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        @include mobile {
+            padding: 40px 7px 13px 7px;
+            width: 76px;
+            height: 98px;
+            & svg {
+               width: 100%;
+            }
+        }
+    }
+    &__info {
+        margin-top: 47px;
+        display: flex;
+        height: fit-content;
+        @include mobile {
+            margin-top: 19px;
+        }
+    }
+}
+.info {
+    &__wrapper {
+        display: flex;
+        @include mobile {
+            flex-direction: column;
+        }
+        & .info {
+            &::after {
+                content: '';
+                height: 35px;
+                width: 1px;
+                background-color: $grey3;
+                position: absolute;
+                right: -40px;
+                @include big-tablet {
+                    right: -5px;
+                    height: 20px;
+                }
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include mobile {
+                    content: none;
+                }
+            }
+        }
+    }
+    margin: auto 40px;
+    @include big-tablet {
+        margin: auto 5px;
+    }
+    position: relative;
+    &_type {
+        @include desktop-text18;
+        &_phone {
+            &::before {
+                content: url('../../img/phone.svg');
+                height: 16px;
+                width: 16px;
+                position: absolute;
+                right: calc( 100% + 7px);
+            }
+            @include mobile {
+                @include mobail-h4;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        &_email {
+            @include links {
+                @include desktop-text18($grey2)
+            };
+            @include mobile {
+                margin-top: 4px;
+                @include links {
+                    @include mobail-comment($grey2)
+                };
+            }
+            width: fit-content;
+            &::before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: $grey3;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+            }
+        }
+        &_links {
+            display: flex;
+            justify-content: space-around;
+            margin-right: 0;
+            @include mobile {
+                display: none;
+            }
+            & .link{
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: none;
+                &:not(:last-child){
+                    margin-right: 20px;
+                    @include big-tablet{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        &_burger {
+            display: none;
+            border: none;
+            background-color: white;
+            margin-left: 5px;
+            &:hover {
+                cursor: pointer;
+            }
+            @include mobile {
+                display: block;
+            }
+        }
+    }
+}
+.header__button {
+    margin-right: 50px;
+    &:hover {
+        .button-svg rect {
+            stroke: white;
+        }
+    }
+    & .button-svg {
+        margin-right: 13px;
+    }
+    @include big-tablet {
+        margin-right: 30px;
+    }
+    @include mobile {
+        display: none;
+    }
+}

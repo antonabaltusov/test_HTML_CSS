@@ -1,0 +1,38 @@
+@import './mixin-fonts';
+@import './mixin-animations';
+
+
+
+@mixin tablet {
+  @media (max-width: $desktop-width) {
+      @content;
+  }
+}
+
+@mixin big-tablet {
+    @media (max-width: 1150px) {
+        @content;
+    }
+  }
+
+@mixin mobile {
+    @media (max-width: $tablet-width) {
+        @content;
+    }
+}
+
+
+@mixin transition ($time: 500ms,$delay: 0ms) {
+    -moz-transition: all $time $delay;
+    -webkit-transition: all $time $delay;
+    -o-transition: all $time $delay;
+    -ms-transition: all $time $delay;
+    transition: all $time $delay;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder           { @content; }
+    &::-moz-placeholder          { @content; }
+    &:-ms-input-placeholder      { @content; }  
+}

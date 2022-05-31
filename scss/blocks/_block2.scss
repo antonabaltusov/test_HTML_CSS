@@ -1,0 +1,173 @@
+.block_2 {
+    &__statistic {
+        @include fade-in-right;
+        position: absolute;
+        right: 0px;
+        bottom: 12px;
+        @include mobile {
+            padding: 18px 24px 14px;
+            position: static;
+            margin-top: 24px;
+            border: 1px solid $black;
+        }
+    }
+    &__assortment {
+        max-width: 100%;
+        margin-top: 100px;
+        display: grid;
+        gap: 7px;
+        grid-template-columns : repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        justify-items: stretch;
+        grid-template-areas:
+        "A B C D "
+        "E B F G"
+        "H I F J"
+        "H K L J";
+        @media (max-width: 630px) {
+            grid-template-columns : repeat(2, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            margin-top: 40px;
+            gap: 4px;
+            grid-template-areas:
+            "A E"
+            "F B"
+            "D B"
+            "H I"
+            "K C"
+            "G L"
+            "G J";
+        }
+        & .item {
+            @include zoom-in;
+            background-color: $milk;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            text-decoration: none;
+            @include mobile {
+                padding: 10px 0px 13px;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $light-grey;
+            }
+            
+            & h6{
+                @include desktop-h6;
+                width: 100%;
+                text-align: left;
+                @include mobile {
+                    width: calc(100% - 16px);
+                    margin-left: 16px;
+                }
+                @media (max-width: 630px) {
+                    @include mobail-h6;
+                }
+            }
+            & img, picture {
+                max-width: 100%;
+                @media (max-width: 630px) {
+                    width: auto;
+                }
+            }
+            &_1 {
+                grid-area: A;
+                & img {
+                    margin: 36px 28px 0px 0px;
+                    @media (max-width: 630px) {
+                        margin: 19px 0 0 0;
+                    }
+                }
+            }
+            &_2 {
+                & img {
+                    margin-top: 18px;
+                    @media (max-width: 630px) {
+                        margin-top: 41px;
+                    }
+                }
+                grid-area: B;
+            }
+            &_3 {
+                grid-area: C;
+                & img {
+                    margin-top: 3px;
+                }
+            }
+            &_4 {
+                grid-area: D;
+                & img {
+                    margin-top: 8px;
+                }
+            }
+            &_5 {
+                grid-area: E;
+                & img {
+                    margin: 10px 0px 0px 10px;
+                    @media (max-width: 630px) {
+                        margin: 25px 0 0 0;
+                    }
+                }
+            }
+            &_6 {
+                grid-area: F;
+                & img {
+                    margin-top: 28px;
+                    @media (max-width: 630px) {
+                        margin-top: 9px;
+                    }
+                }
+            }
+            &_7 {
+                grid-area: G;
+                padding-top: 7px;
+                @media (max-width: 630px) {
+                    padding-top: 47px;
+                }
+                
+            }
+            &_8 {
+                grid-area: H;
+                & img {
+                    margin-top: 34px;
+                    @media (max-width: 630px) {
+                        margin-top: 0px;
+                    }
+                }
+            }
+            &_9 {
+                grid-area: I;
+                @media (max-width: 630px) {
+                    & img {
+                        margin-top: 10px;
+                    }
+                }
+            }
+            &_10 {
+                grid-area: J;
+                padding-top: 26px;
+                @media (max-width: 630px) {
+                    padding: 8px 0px 13px;
+                    & picture {
+                        align-self: flex-end;
+                    }
+                }
+            }
+            &_11 {
+                grid-area: K;
+                @media (max-width: 630px) {
+                    padding-top: 24px;
+                }
+            }
+            &_12 {
+                grid-area: L;
+                @media (max-width: 630px) {
+                    padding-top: 16px;
+                }
+            }
+        }
+    }
+}

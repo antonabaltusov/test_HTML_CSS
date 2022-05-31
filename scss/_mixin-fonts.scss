@@ -1,0 +1,82 @@
+@mixin font($color: $black, $weight: 400, $size: 14px, $height: 17px, $style: normal) {
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+@mixin desktop-header1 ($color: $black) {
+    @include font($color, 500, 64px, 77px)
+}
+@mixin desktop-h2 ($color: $black) {
+    @include font($color, 500, 46px, 55px)
+}
+@mixin desktop-h3 ($color: $black) {
+    @include font($color, 600, 46px, 43px)
+}
+@mixin desktop-h4 ($color: $black) {
+    @include font($color, 500, 22px, 26px)
+}
+@mixin desktop-h5 ($color: $black) {
+    @include font($color, 500, 20px, 24px);
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+}
+@mixin desktop-h6 ($color: $black) {
+    @include font($color, 500, 18px, 22px);
+}
+@mixin desktop-text18 ($color: $black) {
+    @include font($color, 400, 18px, 130%)
+}
+@mixin desktop-statistic ($color: $black) {
+    @include font($color, 500, 56px, 67px)
+}
+@mixin desktop-text-statistic ($color: $black) {
+    @include font($color, 400, 16px, 19px);
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+}
+
+//мобайл
+
+@mixin mobail-header1 ($color: $black) {
+    @include font($color, 500, 26px, 31px)
+}
+@mixin mobail-h2 ($color: $black) {
+    @include font($color, 500, 22px, 26px)
+}
+@mixin mobail-h3 ($color: $black) {
+    @include font($color, 600, 18px, 23px)
+}
+@mixin mobail-h4 ($color: $black) {
+    @include font($color, 500, 16px, 19px)
+}
+@mixin mobail-h5 ($color: $black) {
+    @include font($color, 500, 14px, 120%);
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+}
+@mixin mobail-h6 ($color: $black) {
+    @include font($color, 500, 14px, 17px);
+}
+@mixin mobail-text18 ($color: $black) {
+    @include font($color, 400, 14px, 130%)
+}
+@mixin mobail-comment ($color: $black) {
+    @include font($color, 400, 12px, 14px)
+}
+@mixin mobail-statistic ($color: $black) {
+    @include font($color, 500, 40px, 80%)
+}
+@mixin mobail-text-statistic ($color: $black) {
+    @include font($color, 400, 12px, 14px);
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+}
+@mixin links{
+    @content;
+    &:hover{
+        cursor: pointer;
+        color: $black;
+    }
+}

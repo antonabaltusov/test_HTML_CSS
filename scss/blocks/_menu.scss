@@ -1,0 +1,119 @@
+.menu {
+    &__wrapper {
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        padding-left: 55px;
+        display: none;
+        position: fixed;
+        background: rgba($black , 0.6);
+        width: 100%;
+        min-height: 100vh;
+        z-index: 10;
+        &.show {
+            display: block;
+        }
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    min-height: 100vh;
+    padding: 83px 20px 40px;
+    &__close {
+        border: none;
+        background-color: inherit;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    & ul {
+        & li {
+            @include mobail-h4;
+            margin-bottom: 32px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            &:not(:last-child)::after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: $grey3;
+                position: absolute;
+                bottom: -16px;
+                left: 0;
+                transform: translate(0, -50%);
+            }
+            &:first-child {
+                &:hover {
+                    cursor: pointer;
+                }
+                color: #000000;
+                & svg {
+                    margin-right: 14px;
+                }
+            } 
+            &:not(:first-child) {
+                padding-left: 27px;
+            }
+            &.phone {
+                &::before {
+                    content: url('../../img/coolicon.svg');
+                    height: 13px;
+                    width: 13px;
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                }
+            }
+            &.email {
+                @include links {
+                    @include mobail-h4($grey2)
+                }
+                &::before {
+                    content: url('../../img/email.svg');
+                    height: 13px;
+                    width: 13px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 4px;
+                }
+                & p {
+                   
+                    position: relative;
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 1px;
+                        background-color: $grey3;
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+    &__links {
+        display: flex;
+        margin-top: 57px;
+        & .link {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            &:not(:last-child) {
+                margin-right: 24px;
+            }
+        }
+    }
+    &__info {
+        @include mobail-text18
+    }
+}

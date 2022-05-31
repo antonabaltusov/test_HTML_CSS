@@ -1,0 +1,81 @@
+body {
+    font-family: 'Fira Sans Condensed';
+}
+.block {
+    margin-top: 200px;
+    @include mobile {
+        margin-top: 72px;
+    }
+    &__info {
+        position: relative;
+        & h5 {
+            @include desktop-h5($grey6);
+            @include fade-in-right(0s);
+            @include mobile {
+                @include mobail-h5($grey6);
+            }
+        }
+        & h2 {
+            margin-top: 50px;
+            @include desktop-h2;
+            max-width: 550px;
+            @include mobile {
+                margin-top: 24px;
+                @include mobail-h2;
+            }
+            & span {
+                background-image: linear-gradient($yellow, $yellow);
+                @include fade-in-right-bcg;
+            }
+        }
+    }
+}
+.statistic {
+    & h3 {
+        @include desktop-statistic;
+        @include mobile {
+            @include mobail-statistic;
+        }
+    }
+    & p {
+        @include desktop-text-statistic;
+        @include mobile {
+            margin-top: 8px;
+            @include mobail-text-statistic;
+            max-width: 150px;
+        }
+    }
+}
+.button {
+    background-color: white;
+    border: 1px solid $black;
+    border-radius: 1px;
+    padding: 13px 26px;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+        background-color: $black;
+        color: white;
+    }
+    @include big-tablet {
+        padding: 10px 15px;
+    }
+}
+.container {
+    width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    @include tablet {
+        width: 97%;
+    }
+    @include mobile {
+        width: 88%;
+    }
+}

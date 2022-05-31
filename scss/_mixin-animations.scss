@@ -1,0 +1,48 @@
+@mixin fade-in-down($delay:500ms, $duration:1s,$distance:30px ) {
+    transform: translateY(-$distance);
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-delay: 0s;
+    transition-duration: $duration;
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+        transition-property: opacity, transform;
+        transition-delay: $delay;
+        transition-duration: $duration;
+    }
+}
+@mixin fade-in-right($delay:500ms, $duration:1.4s,$distance:50px ) {
+    opacity: 0;
+    transform: translateX($distance);
+    transition-property: opacity, transform;
+    transition-delay: 0s;
+    transition-duration: $duration;
+    &.active {
+        opacity: 1;
+        transform: translateX(0);
+        transition-property: opacity, transform;
+        transition-delay: $delay;
+        transition-duration: $duration;
+    }
+}
+@mixin fade-in-right-bcg($delay:500ms, $duration:1.4s) {
+    background-position: right;
+    background-size: 0%;
+    background-repeat: no-repeat;
+    &.active {
+        background-size: 100%;
+        transition:  background-size $duration ease $delay;
+    }
+}
+@mixin zoom-in($delay:500ms, $duration:1s,$distance:0.92 ) {
+    opacity: 0;
+    transform: scale($distance);
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: opacity, transform, margin;
+        transition-delay: $delay;
+        transition-duration: $duration;
+    }
+}

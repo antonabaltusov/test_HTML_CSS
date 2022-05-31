@@ -1,0 +1,147 @@
+.block_3 {
+    &__button {
+        @include mobile {
+            display: none;
+        }
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        & svg {
+            & path:first-child {
+                fill: $black;
+            }
+            & path:last-child {
+                fill: none;
+                stroke: $black;
+            }
+        }
+        &:hover {
+            svg {
+                & path:first-child {
+                    fill: white;
+                }
+                & path:last-child {
+                    stroke: white;
+                }
+            }
+        }
+        & svg {
+            margin-left: 10px;
+        }
+    }
+    &__list {
+        margin-top: 99px;
+        display: flex;
+        overflow: hidden;
+        @include mobile {
+            margin-top: 24px;
+        }
+        
+    }
+    &__item {
+        @include zoom-in;
+        margin-right: 30px;
+        box-sizing: border-box;
+        background-color: $milk;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 30px 35px 30px;
+        width: 440px;
+        @include mobile {
+            width: 263px;
+            padding: 10px 10px 18px;
+            margin-right: 8px;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: $light-grey;
+        }
+        & img {
+            max-width: 380px;
+        }
+        & h4 {
+            margin-top: 55px;
+            @include desktop-h4;
+            @include mobile {
+                margin-top: 16px;
+                @include mobail-h4;            
+            }
+        }
+        & div {
+            margin-top: 55px;
+            display: flex;
+            @include mobile {
+                margin-top: 16px;          
+            }
+            & p {
+                @include desktop-text18($grey6);
+                @include mobile {
+                    @include mobail-comment($grey6);            
+                }
+            }
+            & p:first-child {
+                margin-right: 33px;
+            }
+            & p:not(:first-child) {
+                padding: 2px 5px;
+                border: 1px solid $grey6;
+                border-radius: 29px;
+                margin-right: 16px;
+            }
+        }
+    }
+    &__nuv {
+        margin-top: 60px;
+        display: flex;
+        justify-content: end;
+        @include mobile {
+            margin-top: 16px;           
+        }
+        & .nuv__button {
+            border: none;
+            background-color: white;
+            & svg {
+                @include mobile {
+                    height: 10px;
+                    width: 20px;
+                }
+                & path:first-child {
+                    fill: $black;
+                }
+                & path:last-child {
+                    fill: none;
+                    stroke: $black;
+                }
+            }
+            &_left {
+                margin-right: 40px;
+                @include mobile {
+                    margin-right: 24px;
+                }
+            }
+            &:disabled {
+                & svg {
+                    & path:first-child {
+                        fill: $light-grey;
+                    }
+                    & path:last-child {
+                        stroke: $light-grey;
+                    }
+                }
+            }
+            &:hover:not(:disabled) {
+                cursor: pointer;
+                svg {
+                    & path:first-child {
+                        fill: $grey2;
+                    }
+                    & path:last-child {
+                        stroke: $grey2;
+                    }
+                }
+            }
+        }
+        
+    }
+}
